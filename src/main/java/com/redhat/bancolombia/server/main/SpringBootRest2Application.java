@@ -1,9 +1,9 @@
-package com.bhaiti.kela.server.main;
+package com.redhat.bancolombia.server.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"com.bhaiti"})
+@SpringBootApplication(scanBasePackages = {"com.redhat.bancolombia"})
 public class SpringBootRest2Application {
 
 	public static void main(String[] args) {

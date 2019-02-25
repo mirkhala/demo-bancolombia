@@ -1,4 +1,4 @@
-package com.bhaiti.kela.beans;
+package com.redhat.bancolombia.beans;
 
 public class Cliente {
 	

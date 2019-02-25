@@ -1,4 +1,4 @@
-package com.bhaiti.kela.controllers;
+package com.redhat.bancolombia.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bhaiti.kela.beans.Cliente;
-import com.bhaiti.kela.beans.VerificarClienteReply;
+import com.redhat.bancolombia.beans.Cliente;
+import com.redhat.bancolombia.beans.VerificarClienteReply;
 
 @Controller
 public class VerificarClienteController {

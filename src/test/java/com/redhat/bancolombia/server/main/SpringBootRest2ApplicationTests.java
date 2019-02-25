@@ -1,4 +1,4 @@
-package com.bhaiti.kela.server.main;
+package com.redhat.bancolombia.server.main;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
