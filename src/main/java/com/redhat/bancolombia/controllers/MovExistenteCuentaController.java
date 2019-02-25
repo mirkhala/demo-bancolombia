@@ -23,12 +23,23 @@ public class MovExistenteCuentaController {
 	    cliente.setValor(valor);
 	    
 	    //con el numero de cuenta fecha tipotx(1,2,3) y valor si existe la transaccion
-	    
-	    
-	    //devolver true y valor (default 0 si no se encuentra)
+	    Cliente c1 = new Cliente("220033110520","250219", "3", 55.90);
+	    Cliente c2 = new Cliente("220033110521","250219", "2", 120.33);
+	    Cliente c3 = new Cliente("220033110522","250219", "1", 255.15);
+	    Cliente c4 = new Cliente("220033110523","250219", "2", 15.00);
+	    Cliente[] clientes = new Cliente[] {c1,c2,c3,c4};
 	    MovimientoReply response = new MovimientoReply();
-	    response.setExiste(true);
-	    response.setValor(125.20);
+	    response.setExiste(false);
+		response.setValor(0.00);
+	    for (Cliente c : clientes) {
+	    	System.out.printf("Los valores a validar son -> cuenta: %s || fecha: %s || tipoTx: %s || valor: %f \n", c.getCedula(), c.getFecha(), c.getTipoTx(), c.getValor());
+			if (c.getCedula().equals(cliente.getCedula()) && c.getFecha().equals(cliente.getFecha()) && c.getTipoTx().equals(cliente.getTipoTx()) && c.getValor().equals(cliente.getValor())) {
+				response.setExiste(true);
+				response.setValor(c.getValor());
+				System.out.printf("Movimiento en Cuenta encontrado -> cuenta: %s || fecha: %s || tipoTx: %s || valor: %f \n", c.getCedula(), c.getFecha(), c.getTipoTx(), c.getValor());
+				break;
+			}				
+		}
 	    return response;
 	}
 }
