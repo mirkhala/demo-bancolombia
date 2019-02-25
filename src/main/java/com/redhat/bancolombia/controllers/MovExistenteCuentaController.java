@@ -25,7 +25,7 @@ public class MovExistenteCuentaController {
 	    //validaciones irian aca
 	    
 	    VerificarClienteReply response = new VerificarClienteReply();
-	    response.setNumCuenta(0);
+	    response.setNumCuenta("0");
 	    return response;
 	}
 }

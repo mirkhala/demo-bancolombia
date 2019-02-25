@@ -1,5 +1,9 @@
 package com.redhat.bancolombia.controllers;
 
+import java.awt.List;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,10 +27,20 @@ public class VerificarClienteController {
 	    cliente.setTipoTx(tipotx);
 	    cliente.setValor(valor);
 	    
-	    //validaciones irian aca
-	    
+	    //seteo de datos para validar numero de cuenta
+	    Map<String, String> map = new HashMap<String, String>();
+	    map.put("123456", "220033110520");
+	    map.put("123457", "220033110521");
+	    map.put("123458", "220033110522");
+	    map.put("123459", "220033110523");
+
+	    //validacion de cuenta existente
 	    VerificarClienteReply response = new VerificarClienteReply();
-	    response.setNumCuenta(0);
+	    if (map.containsKey(cedula))
+	    	response.setNumCuenta(map.get(cedula));
+	    else
+	    	response.setNumCuenta("0");
+	    System.out.printf("VerificarClienteController.verificarCliente() --> cedula: %s || cuenta: %s \n", cedula, response.getNumCuenta());
 	    return response;
 	}	
 }

@@ -1,13 +1,13 @@
 package com.redhat.bancolombia.beans;
 
 public class VerificarClienteReply {
-	int numCuenta;
+	String numCuenta;
 
-	public int getNumCuenta() {
+	public String getNumCuenta() {
 		return numCuenta;
 	}
 
-	public void setNumCuenta(int numCuenta) {
+	public void setNumCuenta(String numCuenta) {
 		this.numCuenta = numCuenta;
 	}
 }
