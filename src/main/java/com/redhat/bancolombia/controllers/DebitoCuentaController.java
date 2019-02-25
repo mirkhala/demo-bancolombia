@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.redhat.bancolombia.beans.Cliente;
 import com.redhat.bancolombia.beans.DepositoReply;
-import com.redhat.bancolombia.beans.MovimientoReply;
 
 @Controller
 public class DebitoCuentaController {

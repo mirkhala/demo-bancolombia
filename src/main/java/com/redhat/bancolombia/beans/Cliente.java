@@ -7,6 +7,16 @@ public class Cliente {
 	String tipoTx;
 	Double valor;
 	
+	public Cliente(String cedula, String fecha, String tipoTx, Double valor) {
+		super();
+		this.cedula = cedula;
+		this.fecha = fecha;
+		this.tipoTx = tipoTx;
+		this.valor = valor;
+	}
+	public Cliente() {
+		super();
+	}
 	public String getCedula() {
 		return cedula;
 	}

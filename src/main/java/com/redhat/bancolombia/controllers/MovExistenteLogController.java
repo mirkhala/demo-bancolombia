@@ -1,8 +1,5 @@
 package com.redhat.bancolombia.controllers;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,17 +24,24 @@ public class MovExistenteLogController {
 	    
 	    // seteo de datos para validar numero de cuenta
 	    // tomar en cuenta la fecha, tipotx (1,2,3), numcuenta 
-	    Map<String, String> map = new HashMap<String, String>();
-	    map.put("123456", "220033110520");
-	    map.put("123457", "220033110521");
-	    map.put("123458", "220033110522");
-	    map.put("123459", "220033110523");
-	    
-	    
-	  //devolver true y valor (default 0 si no se encuentra)
+	    Cliente c1 = new Cliente("220033110520","250219", "3", 55.90);
+	    Cliente c2 = new Cliente("220033110521","250219", "2", 120.33);
+	    Cliente c3 = new Cliente("220033110522","250219", "1", 255.15);
+	    Cliente c4 = new Cliente("220033110523","250219", "2", 15.00);
+	    Cliente[] clientes = new Cliente[] {c1,c2,c3,c4};
 	    MovimientoReply response = new MovimientoReply();
-	    response.setExiste(true);
-	    response.setValor(125.20);
+	    response.setExiste(false);
+		response.setValor(0.00);
+	    for (Cliente c : clientes) {
+	    	System.out.printf("Los valores a validar son -> cuenta: %s || fecha: %s || tipoTx: %s || valor: %f \n", c.getCedula(), c.getFecha(), c.getTipoTx(), c.getValor());
+			if (c.getCedula().equals(cliente.getCedula()) && c.getFecha().equals(cliente.getFecha()) && c.getTipoTx().equals(cliente.getTipoTx()) && c.getValor().equals(cliente.getValor())) {
+				response.setExiste(true);
+				response.setValor(c.getValor());
+				System.out.printf("Movimiento en Log encontrado -> cuenta: %s || fecha: %s || tipoTx: %s || valor: %f \n", c.getCedula(), c.getFecha(), c.getTipoTx(), c.getValor());
+				break;
+			}				
+		}
+	  //devolver true y valor (default 0 si no se encuentra)
 	    return response;
 	}
 }
