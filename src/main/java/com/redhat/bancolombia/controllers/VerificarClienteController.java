@@ -1,6 +1,5 @@
 package com.redhat.bancolombia.controllers;
 
-import java.awt.List;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,6 +39,7 @@ public class VerificarClienteController {
 	    	response.setNumCuenta(map.get(cedula));
 	    else
 	    	response.setNumCuenta("0");
+	    
 	    System.out.printf("VerificarClienteController.verificarCliente() --> cedula: %s || cuenta: %s \n", cedula, response.getNumCuenta());
 	    return response;
 	}	
