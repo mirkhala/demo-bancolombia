@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.redhat.bancolombia.beans.Cliente;
+import com.redhat.bancolombia.beans.ClienteCuenta;
 import com.redhat.bancolombia.beans.DepositoReply;
 
 @Controller
@@ -16,11 +17,11 @@ public class DebitoCuentaController {
 	@ResponseBody
 	public DepositoReply debitoCuenta(@PathVariable("numcuenta") String numcuenta, @PathVariable("fecha") String fecha, @PathVariable("tipotx") String tipotx, @PathVariable("valor") Double valor) {		
 		System.out.printf("Verificando movimientos en cuenta de cliente con cuenta %s \n", numcuenta); 
-	    Cliente cliente = new Cliente();
-	    cliente.setCedula(numcuenta);
-	    cliente.setFecha(fecha);
-	    cliente.setTipoTx(tipotx);
-	    cliente.setValor(valor);
+	    ClienteCuenta clienteCuenta = new ClienteCuenta();
+	    clienteCuenta.setNumCuenta(numcuenta);
+	    clienteCuenta.setFecha(fecha);
+	    clienteCuenta.setTipoTx(tipotx);
+	    clienteCuenta.setValor(valor);
 	    
 	    //con el numero de cuenta fecha tipotx(1,2,3) y valor si existe la transaccion
 	    switch (tipotx) {
