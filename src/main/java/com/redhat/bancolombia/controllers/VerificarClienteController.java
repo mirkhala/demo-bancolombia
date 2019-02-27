@@ -32,6 +32,10 @@ public class VerificarClienteController {
 	    map.put("123457", "220033110521");
 	    map.put("123458", "220033110522");
 	    map.put("123459", "220033110523");
+	    map.put("43278024", "220033110520-1");
+	    map.put("1032567983", "220033110521-2");
+	    map.put("52876234", "220033110522-3");
+	    map.put("1031974569", "220033110523-4");
 
 	    //validacion de cuenta existente
 	    VerificarClienteReply response = new VerificarClienteReply();
