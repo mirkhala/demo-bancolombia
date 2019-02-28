@@ -33,7 +33,8 @@ public class MovExistenteLogController {
     ClienteCuenta c6 = new ClienteCuenta("220033110525","250219", "2", 100.00);
     ClienteCuenta c7 = new ClienteCuenta("220033110526","250219", "1", 195.15);
     ClienteCuenta c8 = new ClienteCuenta("220033110527","250219", "2", 150.00);
-    ClienteCuenta[] clientes = new ClienteCuenta[] {c1,c2,c3,c4, c5, c6, c7, c8};
+    ClienteCuenta c9 = new ClienteCuenta("220033110528","250219", "1", 170.00);
+    ClienteCuenta[] clientes = new ClienteCuenta[] {c1,c2,c3,c4, c5, c6, c7, c8, c9};
     
     MovimientoReply response = new MovimientoReply();
     response.setExiste(false);
